@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>pe.com.peperos</groupId>
-	<artifactId>demo</artifactId>
+	<artifactId>Peperos</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>demo</name>
-	<description>Proyecto_peperos</description>
+	<name>Peperos</name>
+	<description>Polleria_peperos</description>
 	<properties>
 		<java.version>11</java.version>
 	</properties>

@@ -1,10 +1,10 @@
-package pe.com.peperos.demo;
+package pe.com.peperos;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class DemoApplicationTests {
+class PeperosApplicationTests {
 
 	@Test
 	void contextLoads() {
