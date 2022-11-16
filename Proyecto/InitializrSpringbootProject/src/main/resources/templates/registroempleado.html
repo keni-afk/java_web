@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <title>Principal</title>
+    </head>
+    <body>
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#"  th:href="@{/}">Escuela Nueva</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#" th:href="@{/}">Inicio</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Features</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Pricing</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div th:if=${param.correcto}>
+                        <div class="alert alert-success" role="alert">
+                            Se registro exitosamente                  
+                        </div>
+                    </div>
+                    <div>
+                        <h1>Registro Empleado</h1>
+                        <form th:action="@{/empleado}" method="post" th:object="${empleado}">
+                            <div class="mb-3">
+                                <label for="txtNom" class="form-label">Nombres:</label>
+                                <input type="text" class="form-control" id="txtNom" th:field="*{nombre}" required>   
+                            </div>
+                            <div class="mb-3">
+                                <label for="txtApep" class="form-label">Apellido Paterno:</label>
+                                <input type="text" class="form-control" id="txtApep" th:field="*{apellidopaterno}" required>   
+                            </div> 
+                            <div class="mb-3">
+                                <label for="txtApep" class="form-label">Apellido Materno:</label>
+                                <input type="text" class="form-control" id="txtApem" th:field="*{apellidomaterno}" required>   
+                            </div> 
+
+                            <div class="mb-3">
+                                <label for="txtDni" class="form-label">DNI:</label>
+                                <input type="text" class="form-control" id="txtDni" th:field="*{dni}" required>   
+                            </div> 
+
+                            <div class="mb-3">
+                                <label for="txtDir" class="form-label">Direccion:</label>
+                                <input type="text" class="form-control" id="txtDir" th:field="*{direccion}" required>   
+                            </div> 
+
+                            <div class="mb-3">
+                                <label for="txtTel" class="form-label">Telefono:</label>
+                                <input type="text" class="form-control" id="txtTel" th:field="*{telefono}" required>   
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="txtCel" class="form-label">Celular:</label>
+                                <input type="text" class="form-control" id="txtCel" th:field="*{celular}" required>   
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="txtCor" class="form-label">Correo:</label>
+                                <input type="text" class="form-control" id="txtCor" th:field="*{correo}" required>   
+                            </div>
+
+                            <div class="mb-3">
+                                <div>
+                                    <label for="sexo" class="form-control-label">Sexo:</label>
+                                </div>
+
+
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="sexo" id="rbMas" value="Masculino">
+                                    <label class="form-check-label" for="rbMas">Masculino</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="sexo" id="rbFem" value="Femenino">
+                                    <label class="form-check-label" for="rbFem">Femenino</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="sexo" id="rbOtr" value="Otros">
+                                    <label class="form-check-label" for="RbOtr">Otros</label>
+                                </div>
+
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="txtCla" class="form-label">Clave:</label>
+                                <input type="text" class="form-control" id="txtCla" th:field="*{clave}" required>   
+                            </div>
+                            <div class="mb-3 ">
+                                <label for="cboRol" class="form-label">Rol:</label>
+                                <select class="form-select" id="cboRol">
+                                    <option selected>Seleccione un rol</option>
+                                    <option value="1">Administrador</option>
+                                    <option value="2">Vendedor</option>
+                                    <option value="3">Cajero</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <div>
+                                    <label for="chkEst" class="form-control-label">Estado:</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="checkbox" class="form-check-input" id="chkEst">
+                                    <label class="form-check-label" for="chkEst">Habilidado</label>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Registrar</button><br>
+                            <span>Si ya estas registrado <a href="#">Inicia Sesion aqui</a></span>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    </body>
+</html>
