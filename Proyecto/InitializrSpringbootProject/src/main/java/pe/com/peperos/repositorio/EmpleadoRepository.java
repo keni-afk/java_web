@@ -1,4 +1,3 @@
-
 package pe.com.peperos.repositorio;
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -9,4 +8,6 @@ import pe.com.peperos.entity.EmpleadoEntity;
 public interface EmpleadoRepository extends
         JpaRepository<EmpleadoEntity, Long> {
 
+    public EmpleadoEntity findByEmail(String email);
+    
 }
