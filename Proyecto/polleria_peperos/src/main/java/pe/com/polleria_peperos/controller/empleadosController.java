@@ -51,7 +51,7 @@ public class empleadosController {
     public empleadosEntity delete(@PathVariable Long id) {
 
         empleadosEntity objcategoria = new empleadosEntity();
-        objcategoria.setEstado(true);
+        objcategoria.setEstado(false);
         return empleadosservice.delete(empleadosEntity.builder().codigo(id).build());
     }
 }
