@@ -11,7 +11,7 @@ import pe.com.polleria_peperos.repository.clientesRepository;
 
 @Service
 public class clientesServiceImpl implements clientesService{
-  @Autowired
+    @Autowired
     private clientesRepository clientesrepositorio;
     
     
